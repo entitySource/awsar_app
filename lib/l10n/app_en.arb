@@ -1,0 +1,255 @@
+{
+  "@@locale": "en",
+  "appTitle": "AWSAR India",
+  "navHome": "Home",
+  "navProgrammes": "Our work",
+  "navOpportunities": "Students",
+  "navGetInvolved": "Get involved",
+  "navMore": "More",
+  "languageToggleTooltip": "Switch language to Hindi",
+  "languageEnglish": "English",
+  "languageHindi": "हिंदी",
+  "draftBadge": "Draft translation",
+  "draftBadgeHint": "This Hindi text was machine-assisted and is still being checked.",
+  "sourceLabel": "Source: {host}",
+  "@sourceLabel": {
+    "placeholders": {
+      "host": {
+        "type": "String"
+      }
+    }
+  },
+  "sourceOpenHint": "Opens the original page in your browser",
+  "retry": "Try again",
+  "errorTitle": "Couldn't load this screen",
+  "errorBody": "Something went wrong reading the app's content. Try again, and if it keeps happening, reinstall the app.",
+  "linkOpenFailed": "Couldn't open the link. Check your connection and try again.",
+  "homeDonateCta": "Donate",
+  "homeVolunteerCta": "Volunteer",
+  "homeOpportunitiesCta": "Find a scholarship",
+  "homeOurWork": "Our work",
+  "homeSeeAll": "See all",
+  "homeImpact": "Our impact",
+  "homeMission": "Our mission",
+  "homeAboutCta": "About AWSAR",
+  "programmesTitle": "Our work",
+  "programmesSubtitle": "{count} programme areas",
+  "@programmesSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "programmeImpact": "Impact",
+  "programmeAbout": "About this programme",
+  "programmeNoDetail": "More detail on this programme is coming in the next content update.",
+  "programmeSupportCta": "Support this work",
+  "openOnWebsite": "Open on website",
+  "opportunitiesTitle": "Opportunities",
+  "opportunitiesSubtitle": "Scholarships, mentorships and internships from EduAnchors",
+  "oppFilterAll": "All",
+  "oppTypeScholarship": "Scholarships",
+  "oppTypeMentorship": "Mentorships",
+  "oppTypeInternship": "Internships",
+  "oppSearchLabel": "Search opportunities",
+  "oppSearchClear": "Clear search",
+  "oppSavedOnly": "Saved",
+  "oppSampleChip": "Sample",
+  "oppSampleNotice": "These are sample listings. Live EduAnchors listings appear after the next content update.",
+  "oppSave": "Save",
+  "oppUnsave": "Remove from saved",
+  "oppSavedSnack": "Saved on this phone",
+  "oppRemovedSnack": "Removed from saved",
+  "oppApply": "Apply on EduAnchors",
+  "oppEligibility": "Eligibility",
+  "oppAmount": "Amount",
+  "oppDeadline": "Deadline",
+  "oppLocation": "Location",
+  "oppMode": "Mode",
+  "oppProvider": "Provider",
+  "oppNoResults": "No opportunities match",
+  "oppNoResultsBody": "Try another search or filter.",
+  "oppClearFilters": "Clear filters",
+  "oppNoSaved": "Nothing saved yet",
+  "oppNoSavedBody": "Tap Save on an opportunity to keep it here, even offline.",
+  "getInvolvedTitle": "Get involved",
+  "getInvolvedSubtitle": "Give, volunteer or spread the word",
+  "donateIndiaTitle": "Donate from India",
+  "donateIndiaSubtitle": "UPI, net banking, card, bank transfer or cheque",
+  "donateIntlTitle": "Donate from outside India",
+  "donateIntlSubtitle": "Through AWSAR's FCRA account",
+  "volunteerTitle": "Volunteer",
+  "volunteerSubtitle": "{hours} hours a week for {weeks} weeks",
+  "@volunteerSubtitle": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "fieldName": "Full name",
+  "fieldEmail": "Email",
+  "fieldPhone": "Mobile number",
+  "fieldAmount": "Amount in rupees",
+  "fieldPan": "PAN (optional, for an 80G receipt)",
+  "fieldPanHelper": "Used only in the email you send. The app never saves it.",
+  "fieldPaymentPref": "How would you like to pay?",
+  "fieldInterest": "Area you'd like to help with",
+  "fieldMessage": "Anything you'd like AWSAR to know (optional)",
+  "fieldRequired": "required",
+  "errRequired": "This field is required",
+  "errEmail": "Enter an email like name@example.com",
+  "errPhone": "Enter a 10-digit Indian mobile number",
+  "errAmount": "Enter an amount above ₹0",
+  "errPan": "PAN has 10 characters, like ABCDE1234F",
+  "errFixFields": "Fix the highlighted fields to continue",
+  "continueBtn": "Continue",
+  "handoffTitle": "Send your details to AWSAR",
+  "handoffBody": "AWSAR's team replies with payment instructions. Choose how to send your details.",
+  "handoffEmail": "Send by email",
+  "handoffEmailHint": "Opens your email app with everything filled in",
+  "handoffWebsite": "Open AWSAR website",
+  "handoffGiveDo": "Donate on Give.do",
+  "handoffNoNetworkNote": "Sending needs an internet connection.",
+  "successTitle": "Your email is ready",
+  "successBody": "Press Send in your email app. AWSAR usually replies within a few working days with next steps.",
+  "successDone": "Back to Get involved",
+  "fcraContact": "Email AWSAR for account details",
+  "fcraPayOnline": "Pay online",
+  "volunteerCommitCheck": "I can give at least {hours} hours a week for {weeks} weeks",
+  "@volunteerCommitCheck": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "volunteerCommitRequired": "Tick the commitment above to send your application",
+  "volunteerSubmit": "Send application by email",
+  "moreTitle": "More",
+  "aboutTitle": "About AWSAR",
+  "aboutStory": "Our story",
+  "aboutVision": "Vision",
+  "aboutMission": "Mission",
+  "aboutValues": "What we value",
+  "eduAnchorsTitle": "About EduAnchors",
+  "contactTitle": "Contact",
+  "contactOffices": "Offices",
+  "contactPhone": "Phone",
+  "contactEmail": "Email",
+  "contactHelplines": "Helplines",
+  "contactEduAnchors": "EduAnchors",
+  "contactCallHint": "Call {number}",
+  "@contactCallHint": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "contactEmailHint": "Email {address}",
+  "@contactEmailHint": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+  "mediaTitle": "Photos, videos and reports",
+  "mediaEmpty": "Nothing here yet",
+  "mediaEmptyBody": "Photos, videos and annual reports appear here after the next content update.",
+  "mediaOpenWebsite": "See them on the website",
+  "settingsLanguage": "Language",
+  "settingsAbout": "About this app",
+  "settingsAboutBody": "Built for FOSS Forge 2.0. Content comes from awsarindia.org and eduanchors.com and works offline.",
+  "emailSubjectDonate": "Donation from {name}",
+  "@emailSubjectDonate": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "emailSubjectDonateIntl": "Donation from outside India",
+  "emailSubjectVolunteer": "Volunteer application from {name}",
+  "@emailSubjectVolunteer": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeCtaTitle": "Ready to help?",
+  "homeCtaBody": "Donate, volunteer, or point a student to EduAnchors.",
+  "accountTitle": "Account",
+  "accountSignIn": "Sign in",
+  "accountCreate": "Create account",
+  "accountSignedOutHint": "Sign in to keep your saved opportunities on every phone and have the Donate and Volunteer forms filled in for you.",
+  "fieldPassword": "Password",
+  "fieldPasswordHelper": "At least 8 characters",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password",
+  "errPassword": "Use at least 8 characters",
+  "accountSignedInAs": "Signed in as {email}",
+  "accountUnlocks": "What your account does",
+  "accountUnlockSaved": "Saved opportunities sync to your account",
+  "accountUnlockPrefill": "Donate and Volunteer forms are filled in for you",
+  "accountSignOut": "Sign out",
+  "accountSignedOutToast": "Signed out",
+  "accountCheckEmail": "Check your email to confirm your account, then sign in.",
+  "accountNotConfiguredTitle": "Sign-in isn't set up in this build",
+  "accountNotConfiguredBody": "Everything else works. Saved opportunities stay on this phone.",
+  "authErrInvalid": "Email or password is wrong",
+  "authErrEmailInUse": "An account with this email already exists. Sign in instead.",
+  "authErrWeak": "Choose a stronger password",
+  "authErrNotConfirmed": "Confirm your email first, using the link we sent",
+  "authErrNetwork": "Couldn't reach the server. Check your internet and try again.",
+  "authErrUnknown": "Something went wrong. Try again.",
+  "accountTileSignedOut": "Sign in or create an account",
+  "prefilledNote": "Filled in from your account",
+  "@accountSignedInAs": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "donatePayTitle": "Scan to donate",
+  "donatePayDemo": "Demo QR for the hackathon. It uses a sample UPI ID, so no money is sent.",
+  "donatePayAmount": "₹{amount} to {payee}",
+  "donatePayScanHint": "Open any UPI app, such as Google Pay, PhonePe, Paytm or BHIM, and scan this code.",
+  "donatePayQrLabel": "UPI QR code to pay ₹{amount} to {payee}",
+  "donatePayUpiId": "UPI ID",
+  "donatePayCopy": "Copy UPI ID",
+  "donatePayCopied": "UPI ID copied",
+  "donatePayOpenApp": "Pay with a UPI app on this phone",
+  "donatePayReceipt": "Email my details for an 80G receipt",
+  "donatePayNote": "Donation to AWSAR India",
+  "@donatePayAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "payee": {
+        "type": "String"
+      }
+    }
+  },
+  "@donatePayQrLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "payee": {
+        "type": "String"
+      }
+    }
+  }
+}
