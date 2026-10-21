@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "hi",
+    "draft": true,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "data": {
+    "intro": [
+      "AWSAR की फ़ील्ड और शोध टीमों के साथ स्वयंसेवा करें।"
+    ],
+    "minHoursPerWeek": 4,
+    "minWeeks": 8,
+    "commitmentText": "स्वयंसेवक 8 हफ़्तों तक हर हफ़्ते कम से कम 4 घंटे देने का वादा करते हैं।",
+    "interestAreas": [
+      "शोध और विश्लेषण",
+      "बाल संरक्षण और सुरक्षा",
+      "शिक्षा और प्रारंभिक बाल्यावस्था",
+      "स्वास्थ्य और मानसिक कल्याण",
+      "महिला सशक्तिकरण",
+      "आपदा राहत",
+      "पर्यावरण और जलवायु लचीलापन",
+      "आदर्श गाँव",
+      "तकनीकी सहायता"
+    ],
+    "formUrl": null,
+    "handoffEmail": "support@awsarindia.org",
+    "sourceUrl": "https://awsarindia.org"
+  }
+}

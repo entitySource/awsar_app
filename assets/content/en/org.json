@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "en",
+    "draft": false,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "data": {
+    "name": "AWSAR India",
+    "tagline": "Creating Opportunities for Development",
+    "intro": "AWSAR India works with children, women, youth, and communities across education, health, livelihoods, research — building a more equitable society since 2001.",
+    "storyLead": "Rooted in lived experience. Built on the conviction that opportunity — awsar — is what every person needs and deserves.",
+    "story": [
+      "AWSAR starts from a simple observation: talent is found everywhere, but opportunity is not."
+    ],
+    "vision": "An inclusive, equitable society built on democratic values, sustainable livelihoods, and better quality of life for all.",
+    "mission": "Create opportunities for holistic development by building capacity, generating knowledge, and providing professional services for communities and institutions working with marginalised groups.",
+    "values": [
+      {
+        "label": "Dignity and inclusion",
+        "value": ""
+      },
+      {
+        "label": "Evidence over assumption",
+        "value": ""
+      },
+      {
+        "label": "Community ownership",
+        "value": ""
+      },
+      {
+        "label": "Transparency",
+        "value": ""
+      },
+      {
+        "label": "Compassion in practice",
+        "value": ""
+      },
+      {
+        "label": "Collaboration over competition",
+        "value": ""
+      }
+    ],
+    "impact": [
+      {
+        "label": "Children enrolled & retained in education",
+        "value": "12,000+"
+      },
+      {
+        "label": "Children — early childhood programmes",
+        "value": "15,000+"
+      },
+      {
+        "label": "Children — child protection services",
+        "value": "20,000+"
+      },
+      {
+        "label": "Women & girls — livelihood skills",
+        "value": "9,000+"
+      },
+      {
+        "label": "People — health awareness",
+        "value": "50,000+"
+      },
+      {
+        "label": "Individuals covered in research",
+        "value": "100,000+"
+      },
+      {
+        "label": "Trees planted for environmental sustainability across rural communities",
+        "value": "20,000+"
+      }
+    ],
+    "sourceUrl": "https://awsarindia.org"
+  }
+}

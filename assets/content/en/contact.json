@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "en",
+    "draft": false,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "data": {
+    "offices": [
+      {
+        "label": "Registered office",
+        "value": "E-353, New Ashok Nagar, Vasundhara Enclave, New Delhi 110096"
+      },
+      {
+        "label": "Skill Development Centre",
+        "value": "D-938, Street No. 12, Ashok Nagar, Delhi 110094"
+      },
+      {
+        "label": "Rural Development Centre, Dankaur",
+        "value": "Opposite Baba Sukhamal Hospital, Main Road, Dankaur, Gautam Budh Nagar, UP 203201 (Mon–Sat, 9:00 AM–5:00 PM)"
+      }
+    ],
+    "phones": [
+      "+91 98916 25350"
+    ],
+    "emails": [
+      "support@awsarindia.org"
+    ],
+    "helplines": [
+      {
+        "label": "National Child Helpline (AWSAR no longer runs it)",
+        "value": "1098"
+      },
+      {
+        "label": "Emergency",
+        "value": "112"
+      }
+    ],
+    "eduAnchors": {
+      "phones": [
+        "+91 9717059184"
+      ],
+      "emails": [
+        "support@eduanchors.com"
+      ]
+    },
+    "sourceUrl": "https://awsarindia.org"
+  }
+}

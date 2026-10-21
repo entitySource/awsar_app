@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "en",
+    "draft": false,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "items": [
+    {
+      "id": "research-analysis",
+      "order": 1,
+      "title": "Research & Analysis",
+      "summary": "Socio-economic surveys, needs assessments, baseline studies, and social impact assessments.",
+      "icon": "query_stats",
+      "body": [
+        "AWSAR conducts rigorous field research to help governments, donors, corporates, and development organisations make informed decisions.",
+        "Its work covers socio-economic surveys, needs assessments, baseline studies, social impact assessments, monitoring and evaluation, and data analysis for development decisions."
+      ],
+      "impact": [
+        {
+          "label": "Individuals covered in research",
+          "value": "100,000+"
+        }
+      ],
+      "images": [],
+      "sourceUrl": "https://awsarindia.org"
+    },
+    {
+      "id": "child-protection",
+      "order": 2,
+      "title": "Child Protection & Safety",
+      "summary": "Rescue, rehabilitation, and community-based child protection systems.",
+      "icon": "shield",
+      "body": [
+        "Every child deserves a safe, nurturing, protective environment. AWSAR works to protect children from abuse, neglect, exploitation, trafficking, child labour, and child marriage.",
+        "AWSAR provides rescue, counselling, rehabilitation, educational support, healthcare assistance, shelter referrals, and family reintegration services."
+      ],
+      "impact": [
+        {
+          "label": "Children — child protection services",
+          "value": "20,000+"
+        }
+      ],
+      "images": [],
+      "sourceUrl": "https://awsarindia.org"
+    },
+    {
+      "id": "education-early-childhood",
+      "order": 3,
+      "title": "Education & Early Childhood",
+      "summary": "Education centres at brick kilns, ECD programmes, school infrastructure, and learning support.",
+      "icon": "school",
+      "body": [
+        "Education is the most powerful tool for social transformation. AWSAR improves access to quality education for children from disadvantaged communities.",
+        "AWSAR operates Early Childhood Education and Care Centres providing school readiness, foundational literacy, nutrition support, and child-friendly learning environments.",
+        "Children of migrant workers at brick kilns receive basic education, health support, nutrition, recreation, and school enrolment support through AWSAR's on-site centres."
+      ],
+      "impact": [
+        {
+          "label": "Children enrolled & retained in education",
+          "value": "12,000+"
+        },
+        {
+          "label": "Children — early childhood programmes",
+          "value": "15,000+"
+        }
+      ],
+      "images": [],
+      "sourceUrl": "https://awsarindia.org"
+    },
+    {
+      "id": "health-wellbeing",
+      "order": 4,
+      "title": "Health & Mental Well-being",
+      "summary": "Preventive healthcare, maternal health, mental health support, and telemedicine services.",
+      "icon": "health_and_safety",
+      "body": [
+        "AWSAR promotes preventive healthcare and community well-being through awareness programmes, health camps, mental health support, and telemedicine services.",
+        "It offers counselling, stress management, life-skills education, psychosocial support, and mental health awareness for youth, women, and communities."
+      ],
+      "impact": [
+        {
+          "label": "People — health awareness",
+          "value": "50,000+"
+        }
+      ],
+      "images": [],
+      "sourceUrl": "https://awsarindia.org"
+    },
+    {
+      "id": "womens-empowerment",
+      "order": 5,
+      "title": "Women's Empowerment",
+      "summary": "Livelihood skills, financial inclusion, sanitary pad production, and women's leadership.",
+      "icon": "diversity_3",
+      "body": [
+        "AWSAR strengthens women's economic independence, social status, and leadership through skills training, livelihood support, and rights-based interventions.",
+        "AWSAR works with adolescent girls, women, and self-help groups to build vocational skills, financial literacy, and livelihood opportunities that provide lasting economic independence."
+      ],
+      "impact": [
+        {
+          "label": "Women & girls — livelihood skills",
+          "value": "9,000+"
+        }
+      ],
+      "images": [],
+      "sourceUrl": "https://awsarindia.org"
+    },
+    {
+      "id": "disaster-relief",
+      "order": 6,
+      "title": "Disaster Relief",
+      "summary": "Emergency food, shelter, relief kits, and COVID-19 ration and awareness programmes.",
+      "icon": "volunteer_activism",
+      "body": [
+        "AWSAR provides rapid emergency relief and long-term rehabilitation during disasters and humanitarian crises across India.",
+        "AWSAR has supported communities affected by floods, fire disasters, and the COVID-19 pandemic."
+      ],
+      "impact": [],
+      "images": [],
+      "sourceUrl": "https://awsarindia.org"
+    },
+    {
+      "id": "environment-climate",
+      "order": 7,
+      "title": "Environment & Climate Resilience",
+      "summary": "Environment awareness campaigns, climate-resilient agriculture, tree plantation, and water conservation.",
+      "icon": "eco",
+      "body": [
+        "AWSAR works with rural communities to build environmental awareness and strengthen resilience to climate change, through campaigns, climate-resilient agriculture, tree plantation, and water conservation.",
+        "Erratic rainfall, falling groundwater and degraded land hit farming families and low-income households hardest.",
+        "Community plantation drives restore green cover and support environmental sustainability, with more than 20,000 trees planted across rural communities."
+      ],
+      "impact": [
+        {
+          "label": "Trees planted for environmental sustainability across rural communities",
+          "value": "20,000+"
+        }
+      ],
+      "images": [],
+      "sourceUrl": "https://awsarindia.org"
+    },
+    {
+      "id": "model-villages",
+      "order": 8,
+      "title": "Model Villages",
+      "summary": "Integrated rural development — education, health, livelihoods, and digital inclusion.",
+      "icon": "holiday_village",
+      "body": [
+        "AWSAR's Model Village initiative creates sustainable, self-reliant villages inspired by Dr. A.P.J. Abdul Kalam's vision, integrating all dimensions of community development.",
+        "The initiative integrates education, healthcare, livelihoods, agriculture, digital inclusion, infrastructure, women's empowerment, and environmental sustainability, with the goal of improving quality of life and reducing distress migration."
+      ],
+      "impact": [],
+      "images": [],
+      "sourceUrl": "https://awsarindia.org"
+    },
+    {
+      "id": "technical-assistance",
+      "order": 9,
+      "title": "Technical Assistance",
+      "summary": "Capacity building, programme design, M&E systems, and advisory services for NGOs.",
+      "icon": "handshake",
+      "body": [
+        "AWSAR provides technical assistance and capacity-building services to NGOs, CBOs, government agencies, corporate foundations, and development professionals.",
+        "Services include organisational development, programme design and planning, capacity building workshops and trainings, and monitoring and evaluation systems."
+      ],
+      "impact": [],
+      "images": [],
+      "sourceUrl": "https://awsarindia.org"
+    }
+  ]
+}

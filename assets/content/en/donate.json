@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "en",
+    "draft": false,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "data": {
+    "intro": [
+      "Your gift reaches children, women and communities in AWSAR's programmes. Fill in your details, then scan the QR code with any UPI app to give."
+    ],
+    "paymentPreferences": [
+      "UPI",
+      "Net banking",
+      "Debit/credit card",
+      "Bank transfer (NEFT/RTGS/IMPS)",
+      "Cheque/demand draft"
+    ],
+    "taxNote": "An 80G receipt is available when you share your PAN.",
+    "donatePageUrl": "https://awsarindia.org",
+    "giveDoUrl": null,
+    "handoffEmail": "support@awsarindia.org",
+    "fcra": {
+      "body": [
+        "Gifts from outside India go only to AWSAR's designated FCRA account, by bank transfer (wire/SWIFT) or an online payment link if available. Contact AWSAR for the account details."
+      ],
+      "details": [],
+      "paymentLinkUrl": null
+    },
+    "sourceUrl": "https://awsarindia.org",
+    "upi": {
+      "vpa": "awsarindia.demo@upi",
+      "payeeName": "AWSAR India",
+      "demo": true
+    }
+  }
+}

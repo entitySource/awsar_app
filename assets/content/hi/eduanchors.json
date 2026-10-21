@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "hi",
+    "draft": true,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "data": {
+    "tagline": "भविष्य को सशक्त बनाना, अवसरों को जोड़ना",
+    "mission": "छात्रवृत्ति, मेंटरशिप और इंटर्नशिप के ज़रिए छात्रों को सशक्त बनाना, ताकि वे पढ़ाई में सफल हों और व्यक्तिगत रूप से आगे बढ़ें।",
+    "vision": "एक ऐसी दुनिया जहाँ हर छात्र आर्थिक सहायता, मार्गदर्शन और भावनात्मक सहारे के साथ अपनी पूरी क्षमता तक पहुँचे।",
+    "typeTaglines": {
+      "scholarship": "बड़े सपने देखिए, ख़र्च हम उठाएँगे",
+      "mentorship": "ऐसा मार्गदर्शन जो आपका कल गढ़े",
+      "internship": "आपका करियर यहीं से शुरू होता है"
+    },
+    "sourceUrl": "https://eduanchors.com"
+  }
+}

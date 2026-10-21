@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "en",
+    "draft": false,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "items": [
+    {
+      "id": "sample-scholarship",
+      "type": "scholarship",
+      "title": "Sample scholarship listing",
+      "provider": "EduAnchors",
+      "summary": "Placeholder until the EduAnchors listings are scraped. Open EduAnchors to see current scholarships.",
+      "eligibility": null,
+      "amount": null,
+      "deadline": null,
+      "location": null,
+      "mode": null,
+      "applyUrl": "https://eduanchors.com",
+      "tags": [],
+      "sample": true,
+      "sourceUrl": "https://eduanchors.com"
+    },
+    {
+      "id": "sample-mentorship",
+      "type": "mentorship",
+      "title": "Sample mentorship listing",
+      "provider": "EduAnchors",
+      "summary": "Placeholder until the EduAnchors listings are scraped. Open EduAnchors to see current mentorships.",
+      "eligibility": null,
+      "amount": null,
+      "deadline": null,
+      "location": null,
+      "mode": null,
+      "applyUrl": "https://eduanchors.com",
+      "tags": [],
+      "sample": true,
+      "sourceUrl": "https://eduanchors.com"
+    },
+    {
+      "id": "sample-internship",
+      "type": "internship",
+      "title": "Sample internship listing",
+      "provider": "EduAnchors",
+      "summary": "Placeholder until the EduAnchors listings are scraped. Open EduAnchors to see current internships.",
+      "eligibility": null,
+      "amount": null,
+      "deadline": null,
+      "location": null,
+      "mode": null,
+      "applyUrl": "https://eduanchors.com",
+      "tags": [],
+      "sample": true,
+      "sourceUrl": "https://eduanchors.com"
+    }
+  ]
+}

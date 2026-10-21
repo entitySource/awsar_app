@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "en",
+    "draft": false,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "data": {
+    "tagline": "Empowering Future, Connecting Opportunities",
+    "mission": "To empower students with Scholarships, Mentorships, and Internships, fostering academic success and personal growth.",
+    "vision": "A world where every student achieves their potential with access to financial aid, guidance, and emotional support.",
+    "typeTaglines": {
+      "scholarship": "Dream Big, We'll Fund It",
+      "mentorship": "Guidance That Shapes Your Tomorrow",
+      "internship": "Your Career Starts Here"
+    },
+    "sourceUrl": "https://eduanchors.com"
+  }
+}

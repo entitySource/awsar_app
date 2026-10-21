@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "hi",
+    "draft": true,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "items": [
+    {
+      "id": "sample-scholarship",
+      "type": "scholarship",
+      "title": "नमूना छात्रवृत्ति सूची",
+      "provider": "EduAnchors",
+      "summary": "EduAnchors की सूचियाँ जुड़ने तक यह एक नमूना है। मौजूदा छात्रवृत्तियाँ देखने के लिए EduAnchors खोलें।",
+      "eligibility": null,
+      "amount": null,
+      "deadline": null,
+      "location": null,
+      "mode": null,
+      "applyUrl": "https://eduanchors.com",
+      "tags": [],
+      "sample": true,
+      "sourceUrl": "https://eduanchors.com"
+    },
+    {
+      "id": "sample-mentorship",
+      "type": "mentorship",
+      "title": "नमूना मेंटरशिप सूची",
+      "provider": "EduAnchors",
+      "summary": "EduAnchors की सूचियाँ जुड़ने तक यह एक नमूना है। मौजूदा मेंटरशिप देखने के लिए EduAnchors खोलें।",
+      "eligibility": null,
+      "amount": null,
+      "deadline": null,
+      "location": null,
+      "mode": null,
+      "applyUrl": "https://eduanchors.com",
+      "tags": [],
+      "sample": true,
+      "sourceUrl": "https://eduanchors.com"
+    },
+    {
+      "id": "sample-internship",
+      "type": "internship",
+      "title": "नमूना इंटर्नशिप सूची",
+      "provider": "EduAnchors",
+      "summary": "EduAnchors की सूचियाँ जुड़ने तक यह एक नमूना है। मौजूदा इंटर्नशिप देखने के लिए EduAnchors खोलें।",
+      "eligibility": null,
+      "amount": null,
+      "deadline": null,
+      "location": null,
+      "mode": null,
+      "applyUrl": "https://eduanchors.com",
+      "tags": [],
+      "sample": true,
+      "sourceUrl": "https://eduanchors.com"
+    }
+  ]
+}

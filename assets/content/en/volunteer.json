@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "en",
+    "draft": false,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "data": {
+    "intro": [
+      "Volunteer with AWSAR's field and research teams."
+    ],
+    "minHoursPerWeek": 4,
+    "minWeeks": 8,
+    "commitmentText": "Volunteers commit at least 4 hours a week for 8 weeks.",
+    "interestAreas": [
+      "Research & Analysis",
+      "Child Protection & Safety",
+      "Education & Early Childhood",
+      "Health & Mental Well-being",
+      "Women's Empowerment",
+      "Disaster Relief",
+      "Environment & Climate Resilience",
+      "Model Villages",
+      "Technical Assistance"
+    ],
+    "formUrl": null,
+    "handoffEmail": "support@awsarindia.org",
+    "sourceUrl": "https://awsarindia.org"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "locale": "hi",
+    "draft": true,
+    "generatedAt": "2026-10-21T09:30:00Z",
+    "source": "Seed content quoted from awsarindia.org and eduanchors.com on 2026-10-21. Replace by running scripts/build-content.mjs on the Playwright scrape."
+  },
+  "data": {
+    "intro": [
+      "आपका दान AWSAR के कार्यक्रमों के ज़रिए बच्चों, महिलाओं और समुदायों तक पहुँचता है। अपनी जानकारी भरें, फिर किसी भी UPI ऐप से QR कोड स्कैन करके दान करें।"
+    ],
+    "paymentPreferences": [
+      "UPI",
+      "नेट बैंकिंग",
+      "डेबिट/क्रेडिट कार्ड",
+      "बैंक ट्रांसफ़र (NEFT/RTGS/IMPS)",
+      "चेक/डिमांड ड्राफ़्ट"
+    ],
+    "taxNote": "PAN साझा करने पर 80G रसीद मिलती है।",
+    "donatePageUrl": "https://awsarindia.org",
+    "giveDoUrl": null,
+    "handoffEmail": "support@awsarindia.org",
+    "fcra": {
+      "body": [
+        "भारत के बाहर से दान केवल AWSAR के निर्धारित FCRA खाते में, बैंक ट्रांसफ़र (वायर/SWIFT) या उपलब्ध होने पर ऑनलाइन भुगतान लिंक से जाता है। खाते के विवरण के लिए AWSAR से संपर्क करें।"
+      ],
+      "details": [],
+      "paymentLinkUrl": null
+    },
+    "sourceUrl": "https://awsarindia.org",
+    "upi": {
+      "vpa": "awsarindia.demo@upi",
+      "payeeName": "AWSAR India",
+      "demo": true
+    }
+  }
+}
