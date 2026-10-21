@@ -1,0 +1,283 @@
+import 'dart:async';
+// Captures every screen and flow as PNGs with the real fonts.
+// Run: flutter test screenshots_test --update-goldens
+// Output: screenshots_test/goldens/<variant>/<nn-name>.png
+import 'dart:io';
+import 'dart:ui' as ui;
+
+import 'package:awsar_app/app/app.dart';
+import 'package:awsar_app/app/router.dart';
+import 'package:awsar_app/core/auth/auth_providers.dart';
+import 'package:awsar_app/core/auth/auth_repository.dart';
+import 'package:awsar_app/core/content/content_providers.dart';
+import 'package:awsar_app/core/content/content_repository.dart';
+import 'package:awsar_app/core/links/link_launcher.dart';
+import 'package:awsar_app/core/storage/prefs_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../test/helpers/fake_auth.dart';
+import '../test/helpers/fakes.dart';
+
+const _phone = Size(412, 915);
+final _root = GlobalKey();
+
+Future<void> _loadFonts() async {
+  Future<ByteData> bytes(String path) async => ByteData.view(Uint8List.fromList(await File(path).readAsBytes()).buffer);
+  final families = {
+    'Lexend': ['Lexend-Medium.ttf', 'Lexend-SemiBold.ttf', 'Lexend-Bold.ttf'],
+    'SourceSans3': ['SourceSans3-Regular.ttf', 'SourceSans3-SemiBold.ttf'],
+    'NotoSansDevanagari': ['NotoSansDevanagari-Regular.ttf', 'NotoSansDevanagari-SemiBold.ttf'],
+  };
+  for (final e in families.entries) {
+    final loader = FontLoader(e.key);
+    for (final f in e.value) {
+      loader.addFont(bytes('assets/fonts/$f'));
+    }
+    await loader.load();
+  }
+  final flutterRoot = Platform.environment['FLUTTER_ROOT']!;
+  final icons = FontLoader('MaterialIcons')
+    ..addFont(bytes('$flutterRoot/bin/cache/artifacts/material_fonts/MaterialIcons-Regular.otf'));
+  await icons.load();
+  final roboto = FontLoader('Roboto')
+    ..addFont(bytes('$flutterRoot/bin/cache/artifacts/material_fonts/Roboto-Regular.ttf'));
+  await roboto.load();
+}
+
+class _Variant {
+  const _Variant(this.name, {this.locale = 'en', this.dark = false, this.textScale = 1.0});
+  final String name;
+  final String locale;
+  final bool dark;
+  final double textScale;
+}
+
+Future<void> _pump(
+  WidgetTester tester,
+  _Variant v,
+  String location, {
+  Map<String, Object> prefs = const {},
+  ContentRepository? repo,
+  AuthRepository? auth,
+}) async {
+  tester.view.physicalSize = _phone * 2;
+  tester.view.devicePixelRatio = 2;
+  tester.platformDispatcher.platformBrightnessTestValue = v.dark ? Brightness.dark : Brightness.light;
+  addTearDown(tester.view.reset);
+  addTearDown(tester.platformDispatcher.clearPlatformBrightnessTestValue);
+  // ignore: invalid_use_of_visible_for_testing_member
+  SharedPreferences.setMockInitialValues({'locale': v.locale, ...prefs});
+  final sp = await SharedPreferences.getInstance();
+  final r = repo ?? ContentRepository(read: readAssetFromDisk);
+  if (repo == null) await tester.runAsync(() => Future.wait([r.load('en'), r.load('hi')]));
+  await tester.pumpWidget(
+    RepaintBoundary(
+      key: _root,
+      child: ProviderScope(
+        retry: (_, _) => null,
+        overrides: [
+          prefsProvider.overrideWithValue(sp),
+          linkLauncherProvider.overrideWithValue(FakeLinkLauncher()),
+          contentRepositoryProvider.overrideWithValue(r),
+          routerProvider.overrideWithValue(buildRouter(initialLocation: location)),
+          if (auth != null) authRepositoryProvider.overrideWithValue(auth),
+        ],
+        child: Builder(
+          builder: (context) => MediaQuery(
+            data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(v.textScale)),
+            child: const AwsarApp(),
+          ),
+        ),
+      ),
+    ),
+  );
+  await settle(tester);
+}
+
+/// Grows the screen to fit the whole page (no cut-off content), then saves a
+/// 2x PNG.
+Future<void> _shot(WidgetTester tester, _Variant v, String name, {bool fullPage = true}) async {
+  if (fullPage) {
+    var height = _phone.height;
+    for (var i = 0; i < 6; i++) {
+      var extra = 0.0;
+      for (final s in tester.stateList<ScrollableState>(find.byType(Scrollable))) {
+        if (s.position.axis == Axis.vertical && s.position.hasContentDimensions) {
+          extra = extra < s.position.maxScrollExtent ? s.position.maxScrollExtent : extra;
+        }
+      }
+      if (extra < 1) break;
+      height += extra;
+      tester.view.physicalSize = Size(_phone.width, height) * 2;
+      await tester.pumpAndSettle();
+    }
+  }
+  final boundary = tester.renderObject<RenderRepaintBoundary>(find.byKey(_root));
+  await tester.runAsync(() async {
+    final image = await boundary.toImage(pixelRatio: 2);
+    final png = await image.toByteData(format: ui.ImageByteFormat.png);
+    final file = File('screenshots_test/goldens/${v.name}/$name.png');
+    await file.parent.create(recursive: true);
+    await file.writeAsBytes(png!.buffer.asUint8List());
+    image.dispose();
+  });
+  tester.view.physicalSize = _phone * 2;
+  await tester.pumpAndSettle();
+}
+
+Future<void> _type(WidgetTester tester, String label, String text) async {
+  final f = find.widgetWithText(TextFormField, label);
+  await tester.ensureVisible(f);
+  await tester.enterText(f, text);
+}
+
+void main() {
+  setUpAll(_loadFonts);
+
+  const variants = [_Variant('en-light'), _Variant('hi-light', locale: 'hi'), _Variant('en-dark', dark: true)];
+
+  for (final v in variants) {
+    final hi = v.locale == 'hi';
+    group(v.name, () {
+      testWidgets('home', (t) async {
+        await _pump(t, v, '/');
+        await _shot(t, v, '01-home');
+      });
+      testWidgets('programmes', (t) async {
+        await _pump(t, v, '/programmes');
+        await _shot(t, v, '02-programmes');
+      });
+      testWidgets('programme detail', (t) async {
+        await _pump(t, v, '/programmes/education-early-childhood');
+        await _shot(t, v, '03-programme-detail');
+      });
+      testWidgets('opportunities', (t) async {
+        await _pump(t, v, '/opportunities');
+        await _shot(t, v, '04-opportunities');
+      });
+      testWidgets('opportunities filtered and saved', (t) async {
+        await _pump(t, v, '/opportunities');
+        await t.tap(find.text(hi ? 'मेंटरशिप' : 'Mentorships').first);
+        await t.pumpAndSettle();
+        await t.tap(find.byIcon(Icons.bookmark_border).first);
+        await t.pumpAndSettle();
+        await _shot(t, v, '05-opportunities-filter-saved', fullPage: false);
+      });
+      testWidgets('opportunities no results', (t) async {
+        await _pump(t, v, '/opportunities');
+        await t.enterText(find.byType(TextField).first, 'astronaut');
+        await t.pumpAndSettle();
+        await _shot(t, v, '06-opportunities-no-results');
+      });
+      testWidgets('opportunity detail', (t) async {
+        await _pump(t, v, '/opportunities/sample-scholarship');
+        await _shot(t, v, '07-opportunity-detail');
+      });
+      testWidgets('get involved', (t) async {
+        await _pump(t, v, '/get-involved');
+        await _shot(t, v, '08-get-involved');
+      });
+      testWidgets('donate form', (t) async {
+        await _pump(t, v, '/get-involved/donate-india');
+        await _shot(t, v, '09-donate-form');
+      });
+      testWidgets('donate errors', (t) async {
+        await _pump(t, v, '/get-involved/donate-india');
+        await _type(t, hi ? 'ईमेल *' : 'Email *', 'asha@');
+        await _type(t, hi ? 'मोबाइल नंबर *' : 'Mobile number *', '12345');
+        await t.tap(find.byKey(const Key('donate-continue')));
+        await t.pumpAndSettle();
+        await _shot(t, v, '10-donate-errors');
+      });
+      testWidgets('donate QR', (t) async {
+        await _pump(t, v, '/get-involved/donate-india');
+        await _type(t, hi ? 'पूरा नाम *' : 'Full name *', 'Asha Verma');
+        await _type(t, hi ? 'ईमेल *' : 'Email *', 'asha@example.com');
+        await _type(t, hi ? 'मोबाइल नंबर *' : 'Mobile number *', '9876543210');
+        await _type(t, hi ? 'राशि (रुपये में) *' : 'Amount in rupees *', '1000');
+        await t.tap(find.byKey(const Key('donate-continue')));
+        await t.pumpAndSettle();
+        await _shot(t, v, '11-donate-qr');
+      });
+      testWidgets('email ready', (t) async {
+        await _pump(t, v, '/get-involved/sent');
+        await _shot(t, v, '12-email-ready');
+      });
+      testWidgets('donate international', (t) async {
+        await _pump(t, v, '/get-involved/donate-international');
+        await _shot(t, v, '13-donate-international');
+      });
+      testWidgets('volunteer locked', (t) async {
+        await _pump(t, v, '/get-involved/volunteer');
+        await _shot(t, v, '14-volunteer');
+      });
+      testWidgets('volunteer ready', (t) async {
+        await _pump(t, v, '/get-involved/volunteer');
+        await _type(t, hi ? 'पूरा नाम *' : 'Full name *', 'Asha Verma');
+        await _type(t, hi ? 'ईमेल *' : 'Email *', 'asha@example.com');
+        await _type(t, hi ? 'मोबाइल नंबर *' : 'Mobile number *', '9876543210');
+        await t.ensureVisible(find.byKey(const Key('volunteer-commit')));
+        await t.tap(find.byKey(const Key('volunteer-commit')));
+        await t.pumpAndSettle();
+        await _shot(t, v, '15-volunteer-ready');
+      });
+      testWidgets('more', (t) async {
+        await _pump(t, v, '/more');
+        await _shot(t, v, '16-more');
+      });
+      testWidgets('about', (t) async {
+        await _pump(t, v, '/more/about');
+        await _shot(t, v, '17-about');
+      });
+      testWidgets('contact', (t) async {
+        await _pump(t, v, '/more/contact');
+        await _shot(t, v, '18-contact');
+      });
+      testWidgets('media', (t) async {
+        await _pump(t, v, '/more/media');
+        await _shot(t, v, '19-media');
+      });
+      testWidgets('loading', (t) async {
+        final never = ContentRepository(read: (_) => Completer<String>().future);
+        await _pump(t, v, '/programmes', repo: never);
+        await _shot(t, v, '20-loading', fullPage: false);
+      });
+      testWidgets('error', (t) async {
+        final broken = ContentRepository(read: (_) async => throw Exception('missing'));
+        await _pump(t, v, '/programmes', repo: broken);
+        await _shot(t, v, '21-error', fullPage: false);
+      });
+    });
+  }
+
+  testWidgets('large text (2x), Hindi home', (t) async {
+    const v = _Variant('hi-2x', locale: 'hi', textScale: 2);
+    await _pump(t, v, '/');
+    await _shot(t, v, '01-home', fullPage: false);
+  });
+  testWidgets('large text (2x), English donate', (t) async {
+    const v = _Variant('en-2x', textScale: 2);
+    await _pump(t, v, '/get-involved/donate-india');
+    await _shot(t, v, '09-donate-form', fullPage: false);
+  });
+
+  for (final v in const [_Variant('en-light'), _Variant('hi-light', locale: 'hi')]) {
+    testWidgets('account ${v.name}', (t) async {
+      await _pump(t, v, '/more/account', auth: FakeAuth());
+      await _shot(t, v, '22-account-sign-in', fullPage: false);
+      await t.tap(find.byKey(const Key('account-mode')).last);
+      await t.tap(find.descendant(of: find.byKey(const Key('account-mode')), matching: find.byType(Text)).last);
+      await t.pumpAndSettle();
+      await _shot(t, v, '23-account-create', fullPage: false);
+      await _pump(t, v, '/more/account', auth: FakeAuth(signedIn: FakeAuth.asha));
+      await _shot(t, v, '24-account-signed-in', fullPage: false);
+      await _pump(t, v, '/get-involved/donate-india', auth: FakeAuth(signedIn: FakeAuth.asha));
+      await _shot(t, v, '25-donate-prefilled', fullPage: false);
+    });
+  }
+}
